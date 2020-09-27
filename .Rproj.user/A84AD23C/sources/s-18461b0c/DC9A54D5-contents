@@ -1,0 +1,32 @@
+install.packages('tidyverse')
+install.packages('blogdown')
+install.packages('skimr')
+install.packages('visdat')
+
+
+install.packages("devtools")
+devtools::install_github("hodgettsp/cesR")
+
+library("tidyverse")
+library("blogdown")
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(ggplot2)
+library(visdat)
+library(cesR)
+get_ces("ces2019_phone")
+```
+
+blogdown::new_site( dir = ".",
+                    install_hugo = TRUE,
+                    format = "toml",
+                    sample = TRUE,
+                    theme = "yihui/hugo-lithium",
+                    hostname = "github.com",
+                    theme_example = TRUE,
+                    empty_dirs = FALSE,
+                    to_yaml = TRUE,
+                    serve = interactive())

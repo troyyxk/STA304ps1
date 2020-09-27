@@ -1,0 +1,25 @@
+{
+    "id": "186788FC",
+    "path": "/cloud/project/content/post/2015-07-23-r-rmarkdown.Rmd",
+    "project_path": "content/post/2015-07-23-r-rmarkdown.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1601174127368.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "cursorPosition": "191,212",
+        "scrollLine": "179",
+        "last_setup_crc32": "18461b0c84b53bda"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1601175679,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1601175679273,
+    "read_only": false,
+    "read_only_alternatives": []
+}

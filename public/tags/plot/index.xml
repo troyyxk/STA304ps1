@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plot on A Hugo website</title>
+    <link>/tags/plot/</link>
+    <description>Recent content in plot on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/tags/plot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploration of gender inequality with regards to different provinces</title>
+      <link>/2020/09/26/exploration-of-gender-inequality-with-regards-to-different-provinces/</link>
+      <pubDate>Sat, 26 Sep 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/2020/09/26/exploration-of-gender-inequality-with-regards-to-different-provinces/</guid>
+      <description>Author: Xingkun Yin  Abstract I investigated in CES 2019 Phone sruvey dataset. I expect more developd provinces with higher average income do better in gender equality. Performed data diagnistics, and results showed surprisingly otherwise.
+ Introduction Gender inequality is one of the many social problems that our modern society still not able to resolve. It is necessary for us to find out what factors are related to this problem so that we may eventually get rid of this issue.</description>
+    </item>
+    
+  </channel>
+</rss>
