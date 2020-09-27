@@ -86,7 +86,7 @@ female_province_average <-
 female_province_average = female_province_average[keeps]
 female_province_average = female_province_average %>% rename(female_income=q69)
 
-# merger male, female and overall data bacek to a single dataframe
+# merge male, female and overall data bacek to a single dataframe
 gender_province_average = merge(male_province_average, female_province_average, by='q4')
 gender_province_average = merge(gender_province_average, province_average, by='q4')
 gender_province_average$diff_amount = gender_province_average$male_income - gender_province_average$female_income
@@ -101,6 +101,7 @@ province_average$province<-provinces
 ```
 
 ```{r, fig.width=11, fig.height=5, echo=FALSE}
+# create a graph
 ggplot(data=province_average, aes(x=reorder(province, avg_income), y=avg_income)) +
   geom_bar(stat="identity") + 
   labs(x = "Province",
@@ -112,6 +113,7 @@ Above is a graph of average income of different provinces. Based on my hypothesi
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# create a graph
 ces2019 %>% 
   ggplot(aes(x = q69)) +
   geom_bar() + 
@@ -124,6 +126,7 @@ We then take a look at the distribution of the income. It is right skewed.
 Let's make more graph to find out if my hypohtesis holds or not.
 
 ```{r, fig.width=11, fig.height=5, echo=FALSE}
+# create a graph
 gender_province_average = gender_province_average[order(gender_province_average$diff_percent),]
 ggplot(data=gender_province_average, aes(x=reorder(province, -diff_amount), y=diff_amount)) +
   labs(x = "Province",
@@ -138,6 +141,7 @@ Emm, not what I expected. But literal number of the income gap between genders m
 Therefore, I propose a new measure for measuring the income gap. I call it the Income gap (amount), which is the average male income of a province subtracts the average female income of that province and divide the result with the average femal income of that province. This will translate amount to propotion which should show a better image of the gender inequality issue.
 
 ```{r, fig.width=11, fig.height=5, echo=FALSE}
+# create a graph
 gender_province_average = gender_province_average[order(gender_province_average$diff_percent),]
 ggplot(data=gender_province_average, aes(x=reorder(province, -diff_percent), y=diff_percent)) +
   geom_bar(stat="identity") + 
@@ -149,6 +153,7 @@ ggplot(data=gender_province_average, aes(x=reorder(province, -diff_percent), y=d
 The result of the proportional difference is still not what I expect. It seems that the more developed province are actually doing worse. Nova Scotia, the province with the lowest average income, is the second best here in improving gender equality. However the result is still kind of messy here as there are some more developed provinces doing good and some not doing good. Maybe the use of barplots is not a use here. Let's try scatter graph.
 
 ```{r, fig.width=11, fig.height=5, echo=FALSE}
+# create a graph
 ggplot(data=gender_province_average, aes(x=avg_income, y=diff_percent)) + geom_point() + geom_text(label=gender_province_average$province) + 
   labs(x = "Average Income",
     y = "Income gap (Percent)",
@@ -161,6 +166,7 @@ The varaibles I focused on are Income gap(Percent) and Average Income.
 Now the image is much clearer. We can see there is a over trend of higher income, bigger income gap between gender which is the polar opposite of my hypothesis. In fact, this seems to be a good oppotunity to use the model of linear regression.
 
 ```{r, fig.width=11, fig.height=5, echo=FALSE, warning=FALSE, message=FALSE}
+# create a graph
 gender_province_average_no_alberta = gender_province_average %>% filter(q4 != 9)
 ggplot(data=gender_province_average_no_alberta, aes(x=avg_income, y=diff_percent)) + geom_point() + geom_text(label=gender_province_average_no_alberta$province) + geom_smooth(method=lm) + 
   labs(x = "Average Income",
